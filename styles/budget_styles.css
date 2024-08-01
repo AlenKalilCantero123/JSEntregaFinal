@@ -1,0 +1,450 @@
+
+/* Sección de Presupuesto */
+.budget-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contenedor de Tarjetas */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Asegura separación adecuada */
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+/* Estilos de Tarjetas */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    width: 8cm; /* Ajustado a 8 cm de ancho */
+    height: 10cm; /* Ajustado a 4 cm de alto */
+    margin: 10px 0; /* Margen superior e inferior para separación */
+    position: relative; /* Para posicionamiento de gradiente */
+}
+
+/* Gradiente Animado */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 70%);
+    transition: transform 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Efecto Hover para Gradiente */
+.card:hover::before {
+    transform: translate(50%, 50%);
+}
+
+/* Contenido de la Tarjeta */
+.card-info {
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    color: #000000;
+}
+
+/* Degradados Diagonales para las Tarjetas de Packs */
+.card[data-name="Pack Basico"] {
+    background: linear-gradient(45deg, #87CEFA, #B0E0E6); /* Degradado celeste */
+    font-family: 'Roboto Slab', serif;
+}
+
+.card[data-name="Pack Standard"] {
+    background: linear-gradient(45deg, #FFA07A, #FF4500); /* Degradado naranja */
+    font-family: 'Roboto Slab', serif;
+}
+
+.card[data-name="Pack Premium"] {
+    background: linear-gradient(45deg, #D3D3D3, #A9A9A9); /* Degradado gris */
+    font-family: 'Roboto Slab', serif;
+}
+
+.card[data-name="Pack Deluxe"] {
+    background: linear-gradient(45deg, #FFD700, #FFA500); /* Degradado dorado */
+    font-family: 'Roboto Slab', serif;
+}
+
+/* Estilos de Texto */
+.card h3 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+.card p {
+    font-size: 25px;
+    margin-bottom: 5px;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    font-size: 19px;
+}
+
+.card ul li {
+    margin-bottom: 3px;
+}
+
+/* Estilo del Botón */
+.card button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: #333;
+}
+
+/* Efecto Hover para Tarjetas */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.highlight {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.badge-premium {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 0.2em 0.6em;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+.badge-deluxe {
+    background-color: #c0392b;
+    color: #fff;
+    padding: 0.2em 0.6em;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+/* Sección de Estimación de Fecha */
+.date-estimate {
+    margin-top: 20px;
+}
+
+/* Sección de Servicios Extra */
+.extra-services {
+    margin-top: 20px;
+}
+
+.extra-services label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Contenedor del Carrito */
+.cart-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#cart-items {
+    margin-bottom: 10px;
+}
+
+#cart-total {
+    font-weight: bold;
+}
+
+/* Formulario de Contacto */
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+}
+
+
+
+    .popup {
+        display: none; /* Ocultamos el pop-up por defecto */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+    .popup-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .popup-content button {
+        margin-top: 10px;
+    }
+
+    /* Contenedor del Carrito */
+.cart-container {
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 1rem 0;
+}
+
+.cart-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.cart-container p {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Fecha Estimada */
+.date-estimate {
+    margin-bottom: 1rem;
+}
+
+.date-estimate label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.date-estimate input {
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 0.5rem;
+    background-color: #444;
+    color: #fff;
+    width: 100%;
+}
+
+/* Servicios Extra */
+.extra-services {
+    margin-bottom: 1.5rem;
+}
+
+.extra-services h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.extra-services label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #ddd;
+}
+
+.extra-services input[type="checkbox"] {
+    accent-color: #4CAF50; /* Color verde para el checkbox */
+}
+
+/* Botones */
+button {
+    background-color: #4CAF50; /* Color verde */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el ratón */
+}
+
+button:active {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+    .cart-container {
+        padding: 1rem;
+    }
+    
+    .cart-container h2 {
+        font-size: 1.25rem;
+    }
+
+    .cart-container p {
+        font-size: 1rem;
+    }
+    
+    .date-estimate input {
+        padding: 0.4rem;
+    }
+    
+    button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Estilos del formulario de servicios extra */
+.contact-form-section {
+    background-color: #fff;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-container {
+    background: linear-gradient(45deg, #333, #000, #333);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    font-family: 'Avenir', sans-serif;
+    color: #ffd700; /* Color del texto */
+    animation: gradientAnimation 10s ease infinite;
+}
+
+.form-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-description {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+}
+
+input[type="date"],
+input[type="radio"] {
+    margin-right: 10px;
+    font-size: 1em;
+    font-family: 'Avenir', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="date"]:focus {
+    border-color: #ffd700;
+    outline: none;
+}
+
+.submit-button {
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Dancing Script', cursive;
+}
+
+.submit-button:hover {
+    background-color: #ffcc00;
+    transform: translateY(-2px);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 30px;
+    }
+
+    .form-title {
+        font-size: 2em;
+    }
+
+    .form-description {
+        font-size: 1em;
+    }
+
+    .submit-button {
+        font-size: 1em;
+    }
+}
+
+/* Animación de gradiente */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

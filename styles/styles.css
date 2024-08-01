@@ -1,0 +1,360 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css?family=Avenir|Lora|Garamond&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: 'Avenir', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+
+
+/* Estilos del Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.6); /* Fondo negro translúcido */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px; /* Aumentar el tamaño para mejor visibilidad */
+    font-family: 'Dancing Script', cursive; /* Aplicar la fuente estilo firma */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.navbar a:hover {
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        display: none;
+        background: linear-gradient(45deg, #c0c0c0, #000000);
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    .navbar-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #ffffff;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-toggle:hover {
+        color: #ffcc00;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Icono de menú para móviles */
+.navbar-toggle {
+    display: none;
+}
+
+
+
+/* Estilos del Logo */
+.logo img {
+    max-width: 100px;
+    height: auto;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 
+                -3px -3px 5px rgba(255, 255, 255, 0.5); /* Sombra para el relieve */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: translateY(-2px); /* Levanta el logo al pasar el ratón */
+}
+
+
+/* Portada */
+.portada {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 110px; /* Ajuste para evitar que la navbar cubra la imagen de portada */
+}
+
+.portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-portada {
+    position: absolute;
+    bottom: 0.5cm; /* Ajuste para colocar el texto a 2 cm del borde inferior */
+    left: 55%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-family: 'Dancing Script', cursive; /* Cambia esta fuente por la que prefieras */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo sombreado con opacidad */
+    padding: 1px; /* Espaciado interno para que el texto no quede pegado al borde */
+    border-radius: 10px; /* Bordes redondeados para un acabado más suave */
+}
+
+.texto-portada h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.texto-portada p {
+    font-size: 1.5em;
+}
+
+
+
+/* Estilos para la sección Texto Introducción */
+.Texto-introduccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
+    position: relative;
+}
+
+/* Estilos para la tarjeta de introducción */
+.Texto-intro {
+    background: linear-gradient(45deg, #333, #000, #333);
+    /* Gradiente suave entre gris oscuro y negro */
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    color: #ffd700; /* Texto dorado brillante */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */
+    font-family: 'Dancing Script', cursive; /* Fuente manuscrita cursiva */
+    text-align: center;
+    max-width: 100%;
+}
+
+/* Animación del gradiente de fondo */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+        background: linear-gradient(45deg, #333, #000, #333);
+    }
+    50% {
+        background-position: 100% 100%;
+        background: linear-gradient(45deg, #000, #333, #000);
+    }
+    100% {
+        background-position: 0% 0%;
+        background: linear-gradient(45deg, #333, #000, #333);
+    }
+}
+
+/* Estilo del título */
+.Texto-intro h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Estilo del párrafo */
+.Texto-intro p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+
+/* Estilo del título */
+.Texto-intro h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Estilo del párrafo */
+.Texto-intro p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+
+/* Imagen con Descripción */
+.imagen-descripcion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #fff;
+    margin: 40px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-descripcion img {
+    max-width: 50%;
+    margin-right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.descripcion {
+    max-width: 50%;
+    text-align: left;
+    font-family: 'Dancing Script', cursive;
+}
+
+.descripcion h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.descripcion p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Footer */
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(45deg, #c0c0c0, #000000);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Avenir', sans-serif;
+    position: relative;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logo img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 1.2em;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #c0c0c0;
+  }
+  
+  .legal-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 0.85em;
+  }
+  
+  .legal-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .back-to-top a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .back-to-top a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+  }
+  
+  /* Media Queries */
+  @media (min-width: 768px) {
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .contact-info, .legal-links, .social-icons, .back-to-top {
+      flex: 1;
+    }
+  }
+  
+

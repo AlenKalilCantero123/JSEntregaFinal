@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Sitio de Fotografía</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/chat_syles.css">
+    <link rel="stylesheet" href="/styles/carousel_styles.css">
+    <link rel="stylesheet" href="/styles/portfolio.css">
+    <link rel="stylesheet" href="/styles/budget_styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+   
+   
+    <!-- Importación de fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Avenir|Lora|Garamond&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/index.html"><img src="/assets/Logo/LOGO 3D.png" alt="Logo"></a>
+            </div>
+            <!-- Botón del menú desplegable -->
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <span class="navbar-toggle-icon"></span>
+            </button>
+            <!-- Menú de navegación -->
+            <div class="navbar-menu">
+                <ul class="navbar-menu-list">
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/html/about.html">Acerca</a></li>
+                    <li><a href="/html/gallery.html">Portfolio</a></li>
+                    <li><a href="/html/blog.html">Blog</a></li>
+                    <li><a href="/html/budget.html">Servicios</a></li>
+                    <li><a href="/html/contact.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Imagen rectangular vertical a la izquierda y 2 imagenes 1 arriba de la otra mas pequeñas-->
+<section class="imagenes-vertical-horizontal">
+    <div class="imagen-rectangular">
+        <img src="/assets/FAQ-20240729T173128Z-001/FAQ/DSC_7702 - copia.JPG" alt="Imagen Rectangular">
+    </div>
+</section>
+
+    <!-- Texto introduccion -->
+    <section class="Texto-introduccion">
+        <div class="Texto-intro">
+            <h2>Solicita tu Presupuesto</h2>
+            <p>
+                Ofrecemos servicios de fotografía profesional para capturar tus momentos más preciados. Ya sea que estés buscando cobertura para eventos, retratos o cualquier otra ocasión, tenemos la experiencia y el equipo para hacerlo realidad.
+            </p>
+        </div>
+      
+    </section>
+    <body class="bg-gray-100 py-10">
+        <div class="container mx-auto px-4">
+            <h1 class="text-center text-4xl font-bold mb-10">Comparación de Paquetes de Fotografía</h1>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
+                    <thead>
+                        <tr class="bg-gray-800 text-white text-lg">
+                            <th class="py-4 px-6 text-left">Características</th>
+                            <th class="py-4 px-6 text-center">Pack Básico</th>
+                            <th class="py-4 px-6 text-center">Pack Standard</th>
+                            <th class="py-4 px-6 text-center">Pack Premium <span class="badge badge-premium">Recomendado</span></th>
+                            <th class="py-4 px-6 text-center">Pack Deluxe <span class="badge badge-deluxe">Premium</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-semibold">Precio</td>
+                            <td class="py-4 px-6 text-center text-2xl font-semibold">$70.000</td>
+                            <td class="py-4 px-6 text-center text-2xl font-semibold">$100.000</td>
+                            <td class="py-4 px-6 text-center text-2xl font-semibold">$150.000</td>
+                            <td class="py-4 px-6 text-center text-2xl font-semibold">$200.000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-semibold">Nivel de edición</td>
+                            <td class="py-4 px-6 text-center">Básica</td>
+                            <td class="py-4 px-6 text-center">Intermedia</td>
+                            <td class="py-4 px-6 text-center">Avanzada</td>
+                            <td class="py-4 px-6 text-center">Avanzada</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-semibold">Pre-entrega digital</td>
+                            <td class="py-4 px-6 text-center">3 días</td>
+                            <td class="py-4 px-6 text-center">2 días</td>
+                            <td class="py-4 px-6 text-center">1 día</td>
+                            <td class="py-4 px-6 text-center">24 horas</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-semibold">Entrega final</td>
+                            <td class="py-4 px-6 text-center">7 días</td>
+                            <td class="py-4 px-6 text-center">6 días</td>
+                            <td class="py-4 px-6 text-center">5 días</td>
+                            <td class="py-4 px-6 text-center">5 días</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-semibold">Horas de cobertura</td>
+                            <td class="py-4 px-6 text-center">2 - 4</td>
+                            <td class="py-4 px-6 text-center">3 - 5</td>
+                            <td class="py-4 px-6 text-center">4 - 6</td>
+                            <td class="py-4 px-6 text-center">6 - 8</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-semibold">Cantidad de fotos entregadas</td>
+                            <td class="py-4 px-6 text-center">30 - 50</td>
+                            <td class="py-4 px-6 text-center">50 - 80</td>
+                            <td class="py-4 px-6 text-center">80 - 120</td>
+                            <td class="py-4 px-6 text-center">150 - 200</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-semibold">Extras</td>
+                            <td class="py-4 px-6 text-center">Opcionales</td>
+                            <td class="py-4 px-6 text-center">Opcionales</td>
+                            <td class="py-4 px-6 text-center">Descuento</td>
+                            <td class="py-4 px-6 text-center">Descuento</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    <div class="card-container">
+        <!-- Tarjeta Pack Basico con Roboto Slab -->
+        <div class="card" data-name="Pack Basico" data-price="70000" onclick="selectPack(this)">
+            <div class="card-info">
+                <h3>Pack Basico</h3>
+                <br>
+                
+                <ul>
+
+                    Ideal para trabajos cortos y puntuales, como sesiones personales o eventos pequeños. Perfecto para quienes buscan calidad en poco tiempo sin comprometer el presupuesto.
+                    
+                </ul>
+                <br>
+                <p>$70.000</p>
+                <br>
+                <button>ADQUIRIR</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta Pack Standard con Roboto Slab -->
+        <div class="card" data-name="Pack Standard" data-price="100000" onclick="selectPack(this)">
+            <div class="card-info">
+                <h3>Pack Standard</h3>
+                <br>
+               
+                <ul>
+                    <ul>
+                        Perfecto para eventos y actividades que requieren una cobertura completa y detallada. Ideal para quienes desean documentar momentos importantes como conciertos o eventos deportivos.
+                    </ul>
+                </ul>
+                <br>
+                <p>$100.000</p>
+                <br>
+                <button>ADQUIRIR</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta Pack Premium con Bebas Neue -->
+        <div class="card" data-name="Pack Premium" data-price="150000" onclick="selectPack(this)">
+            <div class="card-info">
+                <h3>Pack Premium</h3>
+                <br>
+                <ul>
+                    Recomendado para clientes que desean una experiencia fotográfica completa y personalizada, incluyendo eventos y sesiones previas. Es ideal para quienes buscan calidad y detalle superior en sus fotografías.
+                </ul>
+                <br>
+                <p>$150.000</p>
+            
+                <button>ADQUIRIR</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta Pack Deluxe con Bebas Neue -->
+        <div class="card" data-name="Pack Deluxe" data-price="200000" onclick="selectPack(this)">
+            <div class="card-info">
+                <h3>Pack Deluxe</h3>
+                <br>
+                <ul>
+         
+                    El paquete definitivo para quienes quieren el máximo nivel de servicio y calidad. Incluye todo lo necesario para una cobertura exhaustiva de eventos grandes y especiales, con extras exclusivos como un vídeo corto.
+                </ul>
+                <br>
+                <p>$200.000</p>
+                
+                <button>ADQUIRIR</button>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="Texto-introduccion">
+        <div class="Texto-intro">
+            <h2>Servicios Personalizados</h2>
+            <p>¿No estás seguro de la duración de tu evento o de la cobertura que necesitas? ¡No te preocupes! Con nuestros servicios personalizados por horas, puedes ajustar el tiempo y el enfoque de la sesión a tus necesidades específicas. Contrata exactamente lo que necesitas, sin sorpresas ni compromisos innecesarios. ¡Haz que cada minuto cuente con un servicio adaptado a ti! </p>
+        </div>
+      
+    </section>
+         <div class="card-container">
+            <div class="card" data-name="Eventos" data-price="25000">
+                <img src="/assets/Portfolio/Preparing_event.JPG" alt="Eventos">
+                <div class="card-info">
+                    <h3>Eventos</h3>
+                    <p>$25.000 por hora</p>
+                    
+                    <label for="event-hours">Horas:</label>
+                    <input type="number" id="event-hours" min="1" step="1" onchange="updateCustomPrice('Eventos', this)">
+                </div>
+            </div>
+            <div class="card" data-name="Conciertos" data-price="30000">
+                <img src="/assets/Portfolio/concert_thx.jpg" alt="Conciertos">
+                <div class="card-info">
+                    <h3>Conciertos</h3>
+                    <p>$30.000 por hora</p>
+                    
+                    <label for="concert-hours">Horas:</label>
+                    <input type="number" id="concert-hours" min="1" step="1" onchange="updateCustomPrice('Conciertos', this)">
+                </div>
+            </div>
+            <div class="card" data-name="Deportes" data-price="20000">
+                <img src="/assets/Portfolio/fighting_football.JPG" alt="Deportes">
+                <div class="card-info">
+                    <h3>Deportes</h3>
+                    <p>$20.000 por hora</p>
+                    
+                    <label for="sports-hours">Horas:</label>
+                    <input type="number" id="sports-hours" min="1" step="1" onchange="updateCustomPrice('Deportes', this)">
+                </div>
+            </div>
+            <div class="card" data-name="Books" data-price="35000">
+                <img src="/assets/Portfolio/ojo loco 2.jpg" alt="Books">
+                <div class="card-info">
+                    <h3>Books</h3>
+                    <p>$35.000 por hora</p>
+                    
+                    <label for="books-hours">Horas:</label>
+                    <input type="number" id="books-hours" min="1" step="1" onchange="updateCustomPrice('Books', this)">
+                </div>
+            </div>
+        </div>
+
+
+<!-- Sección de Formulario de Servicios Extra -->
+<section class="contact-form-section">
+    <div class="form-container">
+        <h2 class="form-title">Servicios Extra</h2>
+        <p class="form-description">Contamos con drones para tomar aéreas y hacemos ediciones de videos recap.</p>
+        <form id="extra-services-form" onsubmit="return false;">
+            <!-- Fecha Estimada -->
+            <div class="form-group">
+                <label for="estimate-date">Fecha estimada del evento:</label>
+                <input type="date" id="estimate-date" onchange="updateDateEstimate(this)">
+            </div>
+
+            <!-- Servicios Extra -->
+            <div class="form-group">
+                <label>Incluir Fotos Aéreas</label>
+                <div>
+                    <input type="radio" id="photo-aerial-yes" name="include-photo-aerial" value="yes" onclick="updateExtraServices()"> Sí
+                    <input type="radio" id="photo-aerial-no" name="include-photo-aerial" value="no" checked onclick="updateExtraServices()"> No
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Incluir Videos Aéreos</label>
+                <div>
+                    <input type="radio" id="video-aerial-yes" name="include-video-aerial" value="yes" onclick="updateExtraServices()"> Sí
+                    <input type="radio" id="video-aerial-no" name="include-video-aerial" value="no" checked onclick="updateExtraServices()"> No
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Incluir Video Recap</label>
+                <div>
+                    <input type="radio" id="video-recap-yes" name="include-video-recap" value="yes" onclick="updateExtraServices()"> Sí
+                    <input type="radio" id="video-recap-no" name="include-video-recap" value="no" checked onclick="updateExtraServices()"> No
+                </div>
+            </div>
+
+</section>
+
+<!-- Carrito -->
+<div class="cart-container">
+    <h2>Carrito de Compras</h2>
+    <div id="cart-items"></div>
+    <p id="cart-total">Total: $0</p>
+    <button onclick="confirmPurchase()">Confirmar Compra</button>
+    <button onclick="clearCart()">Vaciar Carrito</button>
+</div>
+<!-- Pop-up de Métodos de Pago -->
+<div id="payment-popup" class="popup">
+    <div class="popup-content">
+        <h3>Selecciona el Método de Pago</h3>
+        <form id="payment-form">
+            <label><input type="radio" name="payment-method" value="paypal" checked> PayPal</label><br>
+            <label><input type="radio" name="payment-method" value="credit-card"> Tarjeta de Crédito</label><br>
+            <label><input type="radio" name="payment-method" value="mercado-pago"> Mercado Pago</label><br>
+            <label><input type="radio" name="payment-method" value="transferencia"> Transferencia</label><br>
+            <label><input type="radio" name="payment-method" value="efectivo"> Efectivo</label><br>
+            <button type="button" onclick="processPayment()">Pagar</button>
+        </form>
+    </div>
+</div>
+    <!-- Chat -->
+    <div class="chat-icon" onclick="toggleChat()">
+        <img src="/assets/Iconos/chat.png" alt="Chat" width="50" height="50">
+    </div>
+    <div id="chatbox" class="chatbox">
+        <div class="chat-header">Chat</div>
+        <div class="chat-content">
+            <!-- Contenido del chat -->
+            <div class="message">¡Hola! ¿En qué puedo ayudarte?</div>
+            <!-- Botones de respuesta -->
+            <button onclick="sendMessage('¿En qué zona trabajas?')">¿En qué zona trabajas?</button>
+            <button onclick="sendMessage('¿Cuánto demora la entrega del trabajo?')">¿Cuánto demora la entrega del trabajo?</button>
+            <button onclick="sendMessage('¿Haces videos también?')">¿Haces videos también?</button>
+            <button onclick="sendMessage('¿Realizas otros tipos de trabajo?')">¿Realizas otros tipos de trabajo?</button>
+            <button onclick="sendMessage('Tengo otra consulta')">Tengo otra consulta</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Logotipo reducido -->
+            <div class="logo">
+                <img src="/assets/Logo/LOGO 3D.png" alt="Logo">
+            </div>
+            <!-- Datos de contacto -->
+            <div class="contact-info">
+                <p>Teléfono: (123) 456-7890</p>
+                <p>Email: contacto@tudominio.com</p>
+                <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+            </div>
+            <!-- Redes sociales -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ph.cantero/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <!-- Enlaces legales -->
+            <div class="legal-links">
+                <a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a>
+            </div>
+            <!-- Botón "Volver Arriba" -->
+            <div class="back-to-top">
+                <a href="#top">Volver Arriba</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.6.0/jspdf.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/scripts/payment.js"></script>
+    <script src="/scripts/budget.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/scripts/index.js"></script>
+</body>
+
+</html>

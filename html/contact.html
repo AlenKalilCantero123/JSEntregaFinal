@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Tu Sitio de Fotografía</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/chat_syles.css">
+    <link rel="stylesheet" href="/styles/carousel_styles.css">
+    <link rel="stylesheet" href="/styles/contact_styles.css">
+    <link rel="stylesheet" href="/styles/chat_syles.css">
+    
+    <!-- Importación de fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Avenir|Lora|Garamond&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <!-- SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/index.html"><img src="/assets/Logo/LOGO 3D.png" alt="Logo"></a>
+            </div>
+            <!-- Botón del menú desplegable -->
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <span class="navbar-toggle-icon"></span>
+            </button>
+            <!-- Menú de navegación -->
+            <div class="navbar-menu">
+                <ul class="navbar-menu-list">
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/html/about.html">Acerca</a></li>
+                    <li><a href="/html/gallery.html">Portfolio</a></li>
+                    <li><a href="/html/blog.html">Blog</a></li>
+                    <li><a href="/html/budget.html">Servicios</a></li>
+                    <li><a href="/html/contact.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Portada -->
+    <header class="portada">
+        <img src="/assets/FAQ-20240729T173128Z-001/FAQ/1500x844-costos-gestion-presupuestos.jpg" alt="Portada">
+        <div class="texto-portada">
+            <h1></h1>
+            <p>"La fotografía es una manera de sentir, de tocar, de amar. Lo que has capturado en la cámara se queda para siempre." — Aaron Siskind.</p>
+        </div>
+    </header>
+
+    <!-- Sección de Formulario de Contacto -->
+    <section class="contact-form-section">
+        <div class="form-container">
+            <h2 class="form-title">Contáctanos</h2>
+            <p class="form-description">Por favor, completa el siguiente formulario para cualquier consulta o solicitud de información.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Pagos">Pagos</option>
+                        <option value="Servicios">Servicios</option>
+                        <option value="Equipo">Equipo</option>
+                        <option value="Duración">Duración</option>
+                        <option value="Sugerencias">Sugerencias</option>
+                        <option value="Reclamos">Reclamos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Chat -->
+    <div class="chat-icon" onclick="toggleChat()">
+        <img src="/assets/Iconos/chat.png" alt="Chat" width="50" height="50">
+    </div>
+    <div id="chatbox" class="chatbox">
+        <div class="chat-header">Chat</div>
+        <div class="chat-content">
+            <!-- Contenido del chat -->
+            <div class="message">¡Hola! ¿En qué puedo ayudarte?</div>
+            <!-- Botones de respuesta -->
+            <button onclick="sendMessage('¿En qué zona trabajas?')">¿En qué zona trabajas?</button>
+            <button onclick="sendMessage('¿Cuánto demora la entrega del trabajo?')">¿Cuánto demora la entrega del trabajo?</button>
+            <button onclick="sendMessage('¿Haces videos también?')">¿Haces videos también?</button>
+            <button onclick="sendMessage('¿Realizas otros tipos de trabajo?')">¿Realizas otros tipos de trabajo?</button>
+            <button onclick="sendMessage('Tengo otra consulta')">Tengo otra consulta</button>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Logotipo reducido -->
+            <div class="logo">
+                <img src="/assets/Logo/LOGO 3D.png" alt="Logo">
+            </div>
+            <!-- Datos de contacto -->
+            <div class="contact-info">
+                <p>Teléfono: (123) 456-7890</p>
+                <p>Email: contacto@tudominio.com</p>
+                <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+            </div>
+            <!-- Redes sociales --> <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ph.cantero/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <!-- Enlaces legales -->
+            <div class="legal-links">
+                <a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a>
+            </div>
+            <!-- Botón "Volver Arriba" -->
+            <div class="back-to-top">
+                <a href="#top">Volver Arriba</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SweetAlert JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- Form Script -->
+    <script>
+        (function(){
+            emailjs.init('BbtPxeKXalnjyS5f2'); // Reemplaza 'YOUR_USER_ID' con tu ID de usuario EmailJS
+        })();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contact-form');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                emailjs.sendForm('service_xcxkep8', 'template_hrskyho', this)
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        swal("Mensaje Enviado", "Gracias por contactarnos. Nos pondremos en contacto contigo pronto.", "success");
+                        form.reset(); // Resetea el formulario después de enviar
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                        swal("Error", "Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo más tarde.", "error");
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
