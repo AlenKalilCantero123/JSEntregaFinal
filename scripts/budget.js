@@ -71,24 +71,28 @@ function updateExtraServices() {
         return;
     }
 
-    const serviceVideoRecap = document.getElementById('service-video-recap');
-    const servicePhotoAerial = document.getElementById('service-photo-aerial');
-    const serviceVideoAerial = document.getElementById('service-video-aerial');
+    const photoAerialYes = document.getElementById('photo-aerial-yes');
+    const photoAerialNo = document.getElementById('photo-aerial-no');
+    const videoAerialYes = document.getElementById('video-aerial-yes');
+    const videoAerialNo = document.getElementById('video-aerial-no');
+    const videoRecapYes = document.getElementById('video-recap-yes');
+    const videoRecapNo = document.getElementById('video-recap-no');
 
-    updateService(serviceVideoRecap);
-    updateService(servicePhotoAerial);
-    updateService(serviceVideoAerial);
-
-    updateCart();
+    updateService(photoAerialYes, 30000);
+    updateService(photoAerialNo, 0);
+    updateService(videoAerialYes, 40000);
+    updateService(videoAerialNo, 0);
+    updateService(videoRecapYes, 20000);
+    updateService(videoRecapNo, 0);
 }
 
-function updateService(serviceElement) {
-    const serviceName = serviceElement.id;
-    const servicePrice = parseInt(serviceElement.getAttribute('data-price'));
+function updateService(serviceElement, servicePrice) {
+    const serviceName = serviceElement.id.replace(/-/g, ' ').toUpperCase();
 
     if (serviceElement.checked) {
-        cartItems.push({ name: serviceName, price: servicePrice });
-        Swal.fire(`${serviceName.replace('-', ' ').toUpperCase()} añadido`, `${serviceName.replace('-', ' ')} se ha añadido al carrito $${servicePrice}.`, 'success');
+        if (!cartItems.find(item => item.name === serviceName)) {
+            cartItems.push({ name: serviceName, price: servicePrice });
+        }
     } else {
         const existingServiceIndex = cartItems.findIndex(item => item.name === serviceName);
 
@@ -96,6 +100,8 @@ function updateService(serviceElement) {
             cartItems.splice(existingServiceIndex, 1);
         }
     }
+
+    updateCart();
 }
 
 // Función para actualizar el carrito
@@ -145,119 +151,6 @@ function clearHourSelections() {
     });
 }
 
-
-function confirmPurchase() {
-    if (cartItems.length === 0) {
-        Swal.fire('Error', 'El carrito está vacío. Selecciona al menos un servicio antes de confirmar la compra.', 'warning');
-        return;
-    }
-
-    Swal.fire({
-        title: 'Selecciona un Método de Pago',
-        input: 'select',
-        inputOptions: {
-            'paypal': 'PayPal',
-            'credit-card': 'Tarjeta de Crédito',
-            'mercado-pago': 'Mercado Pago',
-            'transferencia': 'Transferencia Bancaria',
-            'efectivo': 'Efectivo'
-        },
-        inputPlaceholder: 'Selecciona un método',
-        showCancelButton: true,
-        confirmButtonText: 'Continuar',
-        cancelButtonText: 'Cancelar',
-        inputValidator: (value) => {
-            return new Promise((resolve) => {
-                if (value) {
-                    resolve();
-                } else {
-                    resolve('Debes seleccionar un método de pago');
-                }
-            });
-        }
-    }).then((result) => {
-        if (result.isConfirmed) {
-            handlePaymentMethod(result.value);
-        }
-    });
-}
-
-// Función para actualizar la fecha estimada
-function updateDateEstimate(inputElement) {
-    const selectedDate = new Date(inputElement.value);
-    const currentDate = new Date();
-
-    if (selectedDate < currentDate) {
-        Swal.fire('Error', 'Las reservas deben hacerse con más de 24 horas de anticipación.', 'error');
-        inputElement.value = '';
-        return;
-    }
-
-    const daysUntilEvent = Math.ceil((selectedDate - currentDate) / (1000 * 60 * 60 * 24));
-
-    let dateAdjustment = 0;
-    if (daysUntilEvent <= 3) {
-        dateAdjustment = 0.5;
-        Swal.fire('Recargo aplicado', 'Como la fecha está dentro de 3 días o menos, se aplica un recargo del 50%.', 'info');
-    } else if (daysUntilEvent <= 7) {
-        dateAdjustment = 0.2;
-        Swal.fire('Recargo aplicado', 'Como la fecha está dentro de más de 3 días pero menos de 7, se aplica un recargo del 20%.', 'info');
-    }
-
-    cartTotal += cartTotal * dateAdjustment;
-    document.getElementById('cart-total').textContent = `Total: $${cartTotal.toFixed(2)}`;
-}// Función para actualizar los servicios extra
-function updateExtraServices() {
-    if (selectedPack) {
-        Swal.fire('Error', 'No puedes seleccionar servicios extra mientras tienes un pack seleccionado.', 'error');
-        return;
-    }
-
-    const photoAerialYes = document.getElementById('photo-aerial-yes');
-    const photoAerialNo = document.getElementById('photo-aerial-no');
-    const videoAerialYes = document.getElementById('video-aerial-yes');
-    const videoAerialNo = document.getElementById('video-aerial-no');
-    const videoRecapYes = document.getElementById('video-recap-yes');
-    const videoRecapNo = document.getElementById('video-recap-no');
-
-    updateService(photoAerialYes, 30000);
-    updateService(photoAerialNo, 0);
-    updateService(videoAerialYes, 40000);
-    updateService(videoAerialNo, 0);
-    updateService(videoRecapYes, 20000);
-    updateService(videoRecapNo, 0);
-}
-
-
-function updateService(serviceElement, servicePrice) {
-    const serviceName = serviceElement.id.replace(/-/g, ' ').toUpperCase();
-
-    if (serviceElement.checked) {
-        if (!cartItems.find(item => item.name === serviceName)) {
-            cartItems.push({ name: serviceName, price: servicePrice });
-            Swal.fire({
-                title: `${serviceName} añadido`,
-                text: `${serviceName} se ha añadido al carrito por $${servicePrice.toLocaleString()}.`,
-                icon: 'success'
-            });
-        }
-    } else {
-        const existingServiceIndex = cartItems.findIndex(item => item.name === serviceName);
-
-        if (existingServiceIndex !== -1) {
-            cartItems.splice(existingServiceIndex, 1);
-            Swal.fire({
-                title: `${serviceName} deseleccionado`,
-                text: `${serviceName} ha sido deseleccionado del carrito.`,
-                icon: 'info'
-            });
-        }
-    }
-
-    updateCart();
-}
-
-
 // Función para confirmar la compra y generar la factura
 async function confirmPurchase() {
     if (cartItems.length === 0) {
@@ -292,38 +185,33 @@ async function confirmPurchase() {
     });
 
     if (paymentMethod) {
-        handlePaymentMethod(paymentMethod);
-        generatePDF();
+        await handlePaymentMethod(paymentMethod); // Asegúrate de que `handlePaymentMethod` sea asíncrona
+        generatePDF(paymentMethod); // Llama a `generatePDF` con el método de pago
     }
 }
 
-async function generatePDF() {
-    // Asegúrate de que jsPDF esté disponible
-    const { jsPDF } = window.jspdf;
-    if (!jsPDF) {
-        console.error('jsPDF no está disponible');
+// Función para actualizar la fecha estimada
+function updateDateEstimate(inputElement) {
+    const selectedDate = new Date(inputElement.value);
+    const currentDate = new Date();
+
+    if (selectedDate < currentDate) {
+        Swal.fire('Error', 'Las reservas deben hacerse con más de 24 horas de anticipación.', 'error');
+        inputElement.value = '';
         return;
     }
 
-    const doc = new jsPDF();
+    const daysUntilEvent = Math.ceil((selectedDate - currentDate) / (1000 * 60 * 60 * 24));
 
-    doc.setFontSize(16);
-    doc.text('Factura', 14, 20);
+    let dateAdjustment = 0;
+    if (daysUntilEvent <= 3) {
+        dateAdjustment = 0.5;
+        Swal.fire('Recargo aplicado', 'Como la fecha está dentro de 3 días o menos, se aplica un recargo del 50%.', 'info');
+    } else if (daysUntilEvent <= 7) {
+        dateAdjustment = 0.2;
+        Swal.fire('Recargo aplicado', 'Como la fecha está dentro de más de 3 días pero menos de 7, se aplica un recargo del 20%.', 'info');
+    }
 
-    doc.setFontSize(12);
-    doc.text(`Fecha: ${new Date().toLocaleDateString()}`, 14, 30);
-    doc.text(`Método de Pago: ${document.querySelector('select').value}`, 14, 40);
-    doc.text('Servicios:', 14, 50);
-
-    let yOffset = 60;
-    cartItems.forEach(item => {
-        doc.text(`${item.name}: $${item.price.toLocaleString()}`, 14, yOffset);
-        yOffset += 10;
-    });
-
-    doc.setFontSize(14);
-    doc.text(`Total: $${cartTotal.toLocaleString()}`, 14, yOffset);
-
-    // Descargar el PDF
-    doc.save('factura.pdf');
+    cartTotal += cartTotal * dateAdjustment;
+    document.getElementById('cart-total').textContent = `Total: $${cartTotal.toFixed(2)}`;
 }

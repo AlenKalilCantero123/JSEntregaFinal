@@ -82,3 +82,8 @@ function handlePaymentMethod(method) {
         }
     });
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Código dentro de este bloque
+});
